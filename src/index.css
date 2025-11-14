@@ -1,0 +1,17 @@
+:root {
+  --cor-fundo-geral: #06151a;
+  --cor-fundo-componentes: #212121;
+  --cor-texto-secundario: #33353f;
+  --cor-branca: #ffffff;
+  --cor-destaque: #17d9b1;
+  --gradiente-banner: linear-gradient(180deg, #17d9b1, #06151a);
+
+  --fonte-primaria: "Work Sans", sans-serif;
+  --fonte-titulo: "Orbitron", sans-serif;
+
+  --fonte-body-xl: 1.5625rem;
+  --fonte-body-l: 1.25rem;
+  --fonte-body-m: 1rem;
+  --fonte-body-s: 0.8125rem;
+  --fonte-body-xs: 0.625rem;
+}

@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: var(--cor-fundo-geral);
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+header img {
+  max-width: 90%;
+}
+
+section {
+  background: var(--gradiente-banner);
+  display: flex;
+  justify-content: center;
+}
+
+section img {
+  max-width: 90%;
+}
+
+/* FORMULÁRIO */
+
+.form-evento {
+  background-color: var(--cor-fundo-componentes);
+  padding: 2rem 1.75rem;
+  margin: 64px auto;
+  width: 24rem;
+  max-width: 90%;
+  border-radius: 1rem;
+}
+
+.form-subtitulo {
+  color: var(--cor-branca);
+  font-size: var(fonte-body-m);
+  font-family: var(--fonte-primaria);
+}
+
+.form-titulo {
+  font-family: var(--fonte-titulo);
+  color: var(--cor-branca);
+  margin: 2rem 1.75rem;
+  font-size: var(--fonte-body-l);
+}
+
+.form-campo {
+  border: 0;
+  margin: 2rem 1.75rem;
+}

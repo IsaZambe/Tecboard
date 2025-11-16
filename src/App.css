@@ -14,25 +14,42 @@ header img {
   max-width: 90%;
 }
 
-section {
+.conteudo-banner {
   background: var(--gradiente-banner);
   display: flex;
   justify-content: center;
 }
 
-section img {
+.conteudo-banner img {
   max-width: 90%;
 }
 
 /* FORMULÁRIO */
 
+.conteudo-body {
+  background-color: var(--cor-fundo-geral);
+  padding: 4rem 25.5rem;
+}
+
 .form-evento {
   background-color: var(--cor-fundo-componentes);
-  padding: 2rem 1.75rem;
-  margin: 64px auto;
+  padding: 2rem;
+  margin: auto;
   width: 24rem;
   max-width: 90%;
   border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--fonte-body-l);
+  color: var(--cor-branca);
+  font-size: var(--fonte-body-l);
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .form-subtitulo {
@@ -41,14 +58,38 @@ section img {
   font-family: var(--fonte-primaria);
 }
 
-.form-titulo {
-  font-family: var(--fonte-titulo);
-  color: var(--cor-branca);
-  margin: 2rem 1.75rem;
-  font-size: var(--fonte-body-l);
+.form-campo {
+  border: none;
+  /* margin: 2rem 1.75rem; */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.form-campo {
-  border: 0;
-  margin: 2rem 1.75rem;
+.form-input {
+  background-color: var(--cor-fundo-componentes);
+  border: 1px solid var(--cor-texto-secundario);
+  color: var(--cor-texto-secundario);
+  font-size: var(--fonte-body-m);
+  border-radius: 0.5rem;
+  width: 90%;
+  padding: 0.75rem 1rem;
+  /* margin: 0.5rem 1.75rem; */
+}
+
+.form-botao {
+  width: 8rem;
+  background-color: var(--cor-destaque);
+  border-radius: 0.5rem;
+  border: none;
+  margin: 2rem 8rem;
+  width: 8rem;
+  padding: 0.5rem 1rem;
+}
+
+.form-botao-texto {
+  color: var(--cor-fundo-componentes);
+  font-family: var(--fonte-primaria);
+  font-size: var(--fonte-body-m);
+  font-weight: 600;
 }

@@ -9,6 +9,10 @@
   --fonte-primaria: "Work Sans", sans-serif;
   --fonte-titulo: "Orbitron", sans-serif;
 
+  --fonte-weight-primaria: 400;
+  --fonte-line-height-heading: 125%;
+  --fonte-line-height-body: 120%;
+
   --fonte-body-xl: 1.5625rem;
   --fonte-body-l: 1.25rem;
   --fonte-body-m: 1rem;

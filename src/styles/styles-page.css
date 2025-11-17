@@ -129,3 +129,16 @@ header img {
   line-height: var(fonte-line-height-body);
   white-space: nowrap;
 }
+
+/* BANNER CONTEUDO */
+
+.conteudo-temas {
+  background-color: var(--cor-fundo-geral);
+}
+.tema-banner-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--fonte-body-l);
+  color: var(--cor-branca);
+  margin: 0 22.5rem 4rem 22.5rem;
+  text-transform: uppercase;
+}

@@ -1,9 +1,38 @@
 import "./styles/styles-page.css";
 import "./styles/variables.css";
 import { FormularioDeEvento } from "./components/FormularioDeEvento";
-import { BannerConteudo } from "./components/BannerConteudo";
+import { TemaBanner } from "./components/TemaBanner";
 
 function Tecboard() {
+  //LISTA DE TEMAS PRO BANNER
+  const temasConteudo = [
+    {
+      id: 1,
+      nome: "front-end",
+    },
+    {
+      id: 2,
+      nome: "back-end",
+    },
+    {
+      id: 3,
+      nome: "devops",
+    },
+    {
+      id: 4,
+      nome: "inteligência artificial",
+    },
+    {
+      id: 5,
+      nome: "data science",
+    },
+    {
+      id: 1,
+      nome: "cloud",
+    },
+  ];
+
+  //layout página
   return (
     <main>
       <header>
@@ -17,7 +46,15 @@ function Tecboard() {
       </section>
       <section className="conteudo-body">
         <FormularioDeEvento />
-        <BannerConteudo />
+      </section>
+      <section className="conteudo-temas">
+        {temasConteudo.map(function (item) {
+          return (
+            <section key={temasConteudo.id}>
+              <TemaBanner temasConteudo={item} />
+            </section>
+          );
+        })}
       </section>
     </main>
   );

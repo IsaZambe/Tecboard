@@ -6,9 +6,26 @@ import { InputFormData } from "./InputFormData";
 import { SelectForm } from "./SelectForm";
 import { BotaoCriarEvento } from "./BotaoCriarEvento";
 
-export function FormularioDeEvento({ temasConteudo }) {
+export function FormularioDeEvento({ temasConteudo, aoSubmeter }) {
+  //FUNÇÃO CRIAR EVENTO
+  function criarEvento(formData) {
+    console.log("Evento criado!", formData);
+
+    const evento = {
+      capa: formData.get("capaEvento"),
+      tag: temasConteudo.find(function (item) {
+        return item.id == formData.get("temaEvento");
+      }),
+      data: new Date(formData.get("dataEvento")),
+      titulo: formData.get("nomeEvento"),
+    };
+
+    //chama a função do pai
+    aoSubmeter(evento);
+  }
+
   return (
-    <form className="form-evento">
+    <form className="form-evento" action={criarEvento}>
       <TituloDoFormulario>Preencha para criar um evento:</TituloDoFormulario>
 
       <div className="campos">

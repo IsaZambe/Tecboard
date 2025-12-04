@@ -3,6 +3,7 @@ import "./styles/variables.css";
 import { FormularioDeEvento } from "./components/FormularioDeEvento";
 import { TemaBanner } from "./components/TemaBanner";
 import { CardEvento } from "./components/CardEvento";
+import { useState } from "react";
 
 function Tecboard() {
   //LISTA DE TEMAS PRO BANNER
@@ -28,21 +29,29 @@ function Tecboard() {
       nome: "data science",
     },
     {
-      id: 1,
+      id: 6,
       nome: "cloud",
     },
   ];
 
-  const eventos = [
+  //LISTA DE EVENTOS PRO CARD
+  const [eventos, setEventos] = useState([
     {
       capa: "src/assets/img/Imagem_1.png",
-      tag: temasConteudo[0].nome,
+      tag: temasConteudo[0],
       data: new Date(),
       titulo: "Mulheres no Front",
       descricao:
         "Valorizando e impulsionando a participação feminina no desenvolvimento front-end.",
     },
-  ];
+  ]);
+
+  //FUNÇÃO ADICIONAR EVENTO
+  function adicionarEvento(newEvento) {
+    // eventos.push(nomeEvento);
+    // console.log("eventos =>", eventos);
+    setEventos([...eventos, newEvento]);
+  }
 
   //layout página
   return (
@@ -57,14 +66,20 @@ function Tecboard() {
         />
       </section>
       <section className="conteudo-body">
-        <FormularioDeEvento temasConteudo={temasConteudo} />
+        <FormularioDeEvento
+          temasConteudo={temasConteudo}
+          aoSubmeter={adicionarEvento}
+        />
       </section>
       <section className="conteudo-temas">
         {temasConteudo.map(function (item) {
           return (
-            <section key={temasConteudo.id}>
+            <section key={item.id}>
               <TemaBanner temasConteudo={item} />
-              <CardEvento evento={eventos[0]} />
+
+              {eventos.map(function (evento, index) {
+                return <CardEvento key={index} evento={evento} />;
+              })}
             </section>
           );
         })}

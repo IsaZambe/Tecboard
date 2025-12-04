@@ -142,3 +142,57 @@ header img {
   margin: 0 22.5rem 4rem 22.5rem;
   text-transform: uppercase;
 }
+
+/* CARD DE TEMAS */
+
+.card-evento {
+  margin: 2rem 1.5rem 4rem 22.5rem;
+  background-color: var(--cor-fundo-componentes);
+  width: 17.625rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--cor-branca);
+  gap: 0.5rem;
+}
+
+.card-evento p,
+.card-evento h4 {
+  margin: 0;
+}
+
+.card-corpo {
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.card-tag {
+  background-color: var(--cor-texto-secundario);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  text-align: center;
+  font-family: var(--fonte-titulo);
+  font-size: var(--fonte-body-s);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: var(--fonte-line-height-body);
+}
+
+.card-data {
+  font-size: var(--fonte-body-s);
+  line-height: var(--fonte-line-height-body);
+}
+
+.card-titulo {
+  font-size: var(--fonte-body-xl);
+  font-weight: 700;
+  font-family: var(--fonte-titulo);
+}
+
+.card-descricao {
+  padding-bottom: 1.5rem;
+  font-size: var(--fonte-body-m);
+}

@@ -2,6 +2,7 @@ import "./styles/styles-page.css";
 import "./styles/variables.css";
 import { FormularioDeEvento } from "./components/FormularioDeEvento";
 import { TemaBanner } from "./components/TemaBanner";
+import { CardEvento } from "./components/CardEvento";
 
 function Tecboard() {
   //LISTA DE TEMAS PRO BANNER
@@ -32,6 +33,17 @@ function Tecboard() {
     },
   ];
 
+  const eventos = [
+    {
+      capa: "src/assets/img/Imagem_1.png",
+      tag: temasConteudo[0].nome,
+      data: new Date(),
+      titulo: "Mulheres no Front",
+      descricao:
+        "Valorizando e impulsionando a participação feminina no desenvolvimento front-end.",
+    },
+  ];
+
   //layout página
   return (
     <main>
@@ -52,6 +64,7 @@ function Tecboard() {
           return (
             <section key={temasConteudo.id}>
               <TemaBanner temasConteudo={item} />
+              <CardEvento evento={eventos[0]} />
             </section>
           );
         })}

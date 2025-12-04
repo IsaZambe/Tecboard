@@ -1,10 +1,16 @@
-export function SelectForm(props) {
+export function SelectForm({ itens, ...rest }) {
   return (
-    <select className="form-input" id="temaEvento">
-      <option className="options-select" value="" disabled selected hidden>
+    <select {...rest} className="form-input" id="temaEvento" defaultValue="">
+      <option className="options-select" value="" disabled>
         Selecione uma opção:
       </option>
-      {props.children}
+      {itens.map(function (item) {
+        return (
+          <option key={item.id} value={item.id}>
+            {item.nome}
+          </option>
+        );
+      })}
     </select>
   );
 }

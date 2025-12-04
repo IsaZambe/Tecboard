@@ -6,7 +6,7 @@ import { InputFormData } from "./InputFormData";
 import { SelectForm } from "./SelectForm";
 import { BotaoCriarEvento } from "./BotaoCriarEvento";
 
-export function FormularioDeEvento() {
+export function FormularioDeEvento({ temasConteudo }) {
   return (
     <form className="form-evento">
       <TituloDoFormulario>Preencha para criar um evento:</TituloDoFormulario>
@@ -23,6 +23,18 @@ export function FormularioDeEvento() {
         </CampoFieldsetForm>
 
         <CampoFieldsetForm>
+          <LabelForm htmlFor="capaEvento">
+            Qual a capa do evento desejado?
+          </LabelForm>
+          <InputForm
+            type="text"
+            placeholder="http://..."
+            className="form-input"
+            name="capaEvento"
+          ></InputForm>
+        </CampoFieldsetForm>
+
+        <CampoFieldsetForm>
           <LabelForm htmlFor="dataEvento">Data do evento:</LabelForm>
           <InputFormData
             type="date"
@@ -34,13 +46,19 @@ export function FormularioDeEvento() {
 
         <CampoFieldsetForm>
           <LabelForm htmlFor="temaEvento">Tema do evento:</LabelForm>
-          <SelectForm className="form-input" name="temaEvento"></SelectForm>
+          <SelectForm
+            id="temaEvento"
+            className="form-input"
+            name="temaEvento"
+            itens={temasConteudo}
+          ></SelectForm>
         </CampoFieldsetForm>
       </div>
-
-      <BotaoCriarEvento>
-        <span className="form-botao-texto">Criar Evento</span>
-      </BotaoCriarEvento>
+      <div className="acoes">
+        <BotaoCriarEvento>
+          <span className="form-botao-texto">Criar Evento</span>
+        </BotaoCriarEvento>
+      </div>
     </form>
   );
 }

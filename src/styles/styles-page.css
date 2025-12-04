@@ -80,7 +80,7 @@ header img {
 }
 
 .form-input {
-  background-color: transparent;
+  background-color: var(--cor-fundo-componentes);
   border: 1px solid var(--cor-texto-secundario);
   font-size: var(--fonte-body-m);
   border-radius: 0.5rem;

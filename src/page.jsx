@@ -57,7 +57,7 @@ function Tecboard() {
         />
       </section>
       <section className="conteudo-body">
-        <FormularioDeEvento />
+        <FormularioDeEvento temasConteudo={temasConteudo} />
       </section>
       <section className="conteudo-temas">
         {temasConteudo.map(function (item) {

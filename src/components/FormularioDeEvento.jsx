@@ -5,14 +5,15 @@ import { InputForm } from "./InputForm";
 import { InputFormData } from "./InputFormData";
 import { SelectForm } from "./SelectForm";
 import { BotaoCriarEvento } from "./BotaoCriarEvento";
+import { FiUpload } from "react-icons/fi";
 
 export function FormularioDeEvento({ temasConteudo, aoSubmeter }) {
   //FUNÇÃO CRIAR EVENTO
   function criarEvento(formData) {
-    console.log("Evento criado!", formData);
+    const imagemCapa = formData.get("capaEvento");
 
     const evento = {
-      capa: formData.get("capaEvento"),
+      capa: imagemCapa ? URL.createObjectURL(imagemCapa) : "", //cria uma URL temporária para o arquivo
       tag: temasConteudo.find(function (item) {
         return item.id == formData.get("temaEvento");
       }),
@@ -40,14 +41,15 @@ export function FormularioDeEvento({ temasConteudo, aoSubmeter }) {
         </CampoFieldsetForm>
 
         <CampoFieldsetForm>
-          <LabelForm htmlFor="capaEvento">
+          <LabelForm htmlFor="capaEvento" className="upload-label">
             Qual a capa do evento desejado?
           </LabelForm>
           <InputForm
-            type="text"
-            placeholder="http://..."
-            className="form-input"
+            type="file"
+            placeholder="Clique para fazer upload da imagem"
+            className="form-input upload-input"
             name="capaEvento"
+            accept="image/*"
           ></InputForm>
         </CampoFieldsetForm>
 

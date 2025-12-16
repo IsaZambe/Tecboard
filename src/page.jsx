@@ -72,14 +72,28 @@ function Tecboard() {
         />
       </section>
       <section className="conteudo-temas">
-        {temasConteudo.map(function (item) {
+        {temasConteudo.map(function (tema) {
+          if (
+            !eventos.some(function (evento) {
+              return evento.tag.id == tema.id;
+            })
+          ) {
+            return null;
+          }
           return (
-            <section key={item.id}>
-              <TemaBanner temasConteudo={item} />
-
-              {eventos.map(function (evento, index) {
-                return <CardEvento key={index} evento={evento} />;
-              })}
+            <section key={tema.id} className="temas-titulo">
+              <div className="conteudo-wrapper">
+                <TemaBanner temasConteudo={tema} />
+                <div className="card-container">
+                  {eventos
+                    .filter(function (evento) {
+                      return evento.tag.id === tema.id;
+                    })
+                    .map(function (evento, index) {
+                      return <CardEvento key={index} evento={evento} />;
+                    })}
+                </div>
+              </div>
             </section>
           );
         })}
